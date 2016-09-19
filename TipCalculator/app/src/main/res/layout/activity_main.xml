@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.chapman.cpsc356.tipcalculator.MainActivity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Enter Cost of Bill"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        android:padding="20sp"
+        android:id="@+id/billText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:inputType="numberDecimal"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/editTextCost"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finalCost"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        android:padding="20sp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/descriptionText"
+        android:gravity="center"
+        android:padding="10sp"
+        android:textSize="20sp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:paddingTop="20sp"
+        android:textSize="25sp"
+        android:text="Rate the Service"
+        android:textStyle="italic"
+        android:id="@+id/serviceText"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/rateText"
+        android:text="1 = Worst   -   10 = Best"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:inputType="number"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/editTextRating"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="Submit"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:onClick="Submit" />
+
+</LinearLayout>
