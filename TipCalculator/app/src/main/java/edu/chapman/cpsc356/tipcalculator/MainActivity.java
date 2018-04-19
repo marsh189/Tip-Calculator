@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView rateText;
     private TextView description;
     private TextView tipCost;
+    private TextView tipText;
     private float finalCost;
+    private float tip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         this.rateText = (TextView)findViewById(R.id.rateText);
         this.description = (TextView)findViewById(R.id.descriptionText);
         this.tipCost = (TextView)findViewById(R.id.finalCost);
+        this.tipText = (TextView)findViewById(R.id.tipText);
     }
 
     public void Submit(View v)
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         {
             description.setVisibility(View.GONE);
             tipCost.setVisibility(View.GONE);
+            tipText.setVisibility(View.GONE);
             bill.setVisibility(View.VISIBLE);
             cost.setVisibility(View.VISIBLE);
             service.setVisibility(View.VISIBLE);
@@ -65,34 +69,49 @@ public class MainActivity extends AppCompatActivity {
     {
         if(r > 0 && r < 11) {
             if (r >= 1 && r <= 3) {
-                finalCost = (c * 0.1f) + c;
+                tip = (c * 0.1f);
+                finalCost = tip + c;
                 finalCost = (float) (Math.round(finalCost * 100.0) / 100.0);
+                tip = (float) (Math.round(tip * 100.0) / 100.0);
                 tipCost.setText("$" + finalCost);
-                description.setText("1-3: 10%");
+                tipText.setText("Tip Amount: $" + tip);
+                description.setText("Rating of 1-3 = 10%");
             }
             else if (r >= 4 && r <= 5) {
-                finalCost = (c * 0.13f) + c;
+                tip = (c * 0.13f);
+                finalCost = tip + c;
                 finalCost = (float) (Math.round(finalCost * 100.0) / 100.0);
+                tip = (float) (Math.round(tip * 100.0) / 100.0);
                 tipCost.setText("$" + finalCost);
-                description.setText("4-5: 13%");
+                tipText.setText("Tip Amount: $" + tip);
+                description.setText("Rating of 4-5 = 13%");
             }
             else if (r >= 6 && r <= 7) {
-                finalCost = (c * 0.15f) + c;
+                tip = (c * 0.15f);
+                finalCost = tip + c;
                 finalCost = (float) (Math.round(finalCost * 100.0) / 100.0);
+                tip = (float) (Math.round(tip * 100.0) / 100.0);
                 tipCost.setText("$" + finalCost);
-                description.setText("6-7: 15%");
+                tipText.setText("Tip Amount: $" + tip);
+                description.setText("Rating of 6-7 = 15%");
             }
             else if (r >= 8 && r <= 9) {
-                finalCost = (c * 0.2f) + c;
+                tip = (c * 0.2f);
+                finalCost = tip + c;
                 finalCost = (float) (Math.round(finalCost * 100.0) / 100.0);
+                tip = (float) (Math.round(tip * 100.0) / 100.0);
                 tipCost.setText("$" + finalCost);
-                description.setText("8-9: 20%");
+                tipText.setText("Tip Amount: $" + tip);
+                description.setText("Rating of 8-9 = 20%");
             }
             else if (r == 10) {
-                finalCost = (c * 0.25f) + c;
+                tip = (c * 0.25f);
+                finalCost = tip + c;
                 finalCost = (float) (Math.round(finalCost * 100.0) / 100.0);
+                tip = (float) (Math.round(tip * 100.0) / 100.0);
                 tipCost.setText("$" + finalCost);
-                description.setText("10: 25%");
+                tipText.setText("Tip Amount: $" + tip);
+                description.setText("Rating of 10 = 25%");
             }
 
             bill.setVisibility(View.GONE);
@@ -102,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
             rating.setVisibility(View.GONE);
             description.setVisibility(View.VISIBLE);
             tipCost.setVisibility(View.VISIBLE);
+            tipText.setVisibility(View.VISIBLE);
         }
         else
         {
